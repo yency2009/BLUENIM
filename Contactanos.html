@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctanos - Bluenim</title>
+
+    <style>
+        @font-face {
+            font-family: "Creato Display ExtraBold";
+            src: url("../fonts/CreatoDisplay-ExtraBold.woff2") format("woff2");
+        }
+
+        @font-face {
+            font-family: "Kolbano Regular";
+            src: url("../fonts/Kolbano-Regular.woff2") format("woff2");
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: "Bookman Old Style", Bookman, serif;
+            color: #333;
+            background: linear-gradient(
+                135deg,
+                #CE9B9A,
+                #e5c4c4 20%,
+                #fff 50%,
+                #dce8ef 75%,
+                #99B7CC
+            );
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #fff;
+            border-bottom: 3px solid #99B7CC;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px;
+        }
+
+        .logo {
+            font-family: "Kolbano Regular", sans-serif;
+            color: #26556D;
+            font-size: 27px;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            position: relative;
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0;
+            height: 3px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #CE9B9A, #99B7CC);
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #26556D;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .contacto {
+            flex: 1;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contacto h2 {
+            font-family: "Creato Display ExtraBold", sans-serif;
+            color: #26556D;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .texto-contacto {
+            color: #555;
+            margin-bottom: 40px;
+            font-size: 19px;
+            line-height: 1.6;
+        }
+
+        .contactos-container {
+            max-width: 700px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .contactos-container a {
+            display: block;
+            padding: 18px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            text-decoration: none;
+            border: 2px solid #CE9B9A;
+            border-radius: 18px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .contactos-container a:hover {
+            background: #26556D;
+            color: #fff;
+            transform: translateY(-4px);
+        }
+
+        footer {
+            padding: 22px 0;
+            background: #000;
+            color: #fff;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            nav a {
+                font-size: 17px;
+            }
+
+            .contacto {
+                padding: 60px 15px;
+            }
+
+            .contacto h2 {
+                font-size: 30px;
+            }
+
+            .texto-contacto {
+                font-size: 18px;
+            }
+
+            .contactos-container a {
+                font-size: 17px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo">BLUENIM</div>
+
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="Producto.html">Producto</a>
+                <a href="Nosotros.html">Sobre Nosotros</a>
+                <a href="Contactanos.html">Contáctanos</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contacto">
+        <h2>Contáctanos</h2>
+
+        <p class="texto-contacto">
+            ¿Tienes alguna pregunta o quieres conocer nuestros monederos?
+            ¡Escríbenos!
+        </p>
+
+        <div class="contactos-container">
+            <a href="https://workspace.google.com/intl/es-419/gmail/" target="_blank">
+                📧 Email: bluenim18@gmail.com
+            </a>
+
+            <a href="https://wa.me/573214049669" target="_blank">
+                📱 WhatsApp: +57 321 404 9669
+            </a>
+
+            <a href="https://www.facebook.com/profile.php?id=61572055773887" target="_blank">
+                📘 Facebook: Bluenim Lls
+            </a>
+
+            <a href="https://www.instagram.com/bluenim.lls/" target="_blank">
+                📷 Instagram: @bluenim.lls
+            </a>
+
+            <a href="https://www.tiktok.com/@_bluenim_lls" target="_blank">
+                🎵 TikTok: @_bluenim_lls
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Bluenim - Hecho con amor.</p>
+    </footer>
+
+</body>
+</html>

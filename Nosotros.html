@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - Bluenim</title>
+
+    <style>
+        @font-face {
+            font-family: "Kolbano";
+            src: url("../fonts/Kolbano-Regular.woff2") format("woff2");
+        }
+
+        @font-face {
+            font-family: "Creato";
+            src: url("../fonts/CreatoDisplay-ExtraBold.woff2") format("woff2");
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: "Bookman Old Style", Bookman, serif;
+            color: #333;
+            background: linear-gradient(
+                135deg,
+                #CE9B9A,
+                #e5c4c4 20%,
+                #fff 50%,
+                #dce8ef 75%,
+                #99B7CC
+            );
+        }
+
+        /* ENCABEZADO */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #fff;
+            border-bottom: 3px solid #99B7CC;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px;
+        }
+
+        .logo {
+            font-family: "Kolbano", sans-serif;
+            color: #26556D;
+            font-size: 27px;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #26556D;
+        }
+
+        /* SOBRE NOSOTROS */
+
+        .sobre-nosotros {
+            flex: 1;
+            padding: 70px 6%;
+            text-align: center;
+        }
+
+        h2,
+        h3 {
+            font-family: "Creato", Arial, sans-serif;
+            color: #26556D;
+        }
+
+        .sobre-nosotros > h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .introduccion {
+            max-width: 750px;
+            margin: 0 auto 50px;
+            color: #555;
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+        /* ÁREAS */
+
+        .equipos-container {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 45px;
+        }
+
+        .equipo-card {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.94);
+            border: 3px solid #99B7CC;
+            border-radius: 20px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            text-align: left;
+        }
+
+        .equipo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+        }
+
+        .equipo-card img {
+            width: 350px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 4px solid #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        .equipo-texto {
+            flex: 1;
+        }
+
+        .equipo-texto h3 {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .equipo-texto p,
+        .mvv-card p,
+        .tesis p {
+            color: #555;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .equipo-derecha {
+            flex-direction: row-reverse;
+        }
+
+        /* MISIÓN, VISIÓN Y VALORES */
+
+        .mvv-container {
+            max-width: 1100px;
+            margin: 70px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .mvv-card {
+            padding: 30px 25px;
+            background: rgba(255, 255, 255, 0.94);
+            border: 3px solid #99B7CC;
+            border-radius: 20px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .mvv-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+        }
+
+        .mvv-card h3 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        /* TESIS */
+
+        .tesis {
+            max-width: 700px;
+            margin: 50px auto 0;
+            padding: 35px 25px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 3px solid #99B7CC;
+            border-radius: 20px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+        }
+
+        .tesis h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .tesis p {
+            margin-bottom: 20px;
+        }
+
+        .boton-tesis {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #26556D;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .boton-tesis:hover {
+            background: #CE9B9A;
+            transform: translateY(-3px);
+        }
+
+        /* PIE DE PÁGINA */
+
+        footer {
+            margin-top: 50px;
+            padding: 22px;
+            background: #000;
+            color: #fff;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 21px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .equipo-card,
+            .equipo-derecha {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .equipo-card img {
+                width: 100%;
+                height: 250px;
+            }
+
+            .equipo-texto p {
+                text-align: center;
+            }
+
+            .mvv-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+
+            <div class="logo">BLUENIM</div>
+
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="Producto.html">Producto</a>
+                <a href="Nosotros.html">Sobre Nosotros</a>
+                <a href="Contactanos.html">Contáctanos</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <section class="sobre-nosotros">
+
+        <h2>Sobre Nosotros</h2>
+
+        <p class="introduccion">
+            En Bluenim trabajamos con creatividad, compromiso y dedicación para
+            crear monederos únicos a partir de jean reciclado. Cada área aporta
+            sus conocimientos para hacer crecer nuestra empresa y ofrecer
+            productos con personalidad.
+        </p>
+
+        <div class="equipos-container">
+
+            <div class="equipo-card equipo-derecha">
+
+                <img src="../img/img.yency.jpeg" alt="Yency Beltrán">
+
+                <div class="equipo-texto">
+                    <h3>Tecnología</h3>
+
+                    <p>
+                        El área de tecnología está a cargo de
+                        <strong>Yency Beltrán</strong> y permite utilizar
+                        herramientas digitales para mejorar el funcionamiento
+                        de Bluenim. Gracias a ella desarrollamos nuestra página
+                        web y redes sociales, mostramos nuestros productos en
+                        internet y facilitamos la comunicación con nuestros
+                        clientes.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="equipo-card">
+
+                <img src="../img/img,valery.jpeg" alt="Valery Santana">
+
+                <div class="equipo-texto">
+                    <h3>Diseño Gráfico</h3>
+
+                    <p>
+                        El área de diseño gráfico está a cargo de
+                        <strong>Valery Santana</strong> y crea la identidad
+                        visual de Bluenim. Diseña imágenes, logo, publicidad
+                        y todo el contenido gráfico que representa nuestra
+                        marca, haciendo que nuestros monederos sean atractivos,
+                        modernos y fáciles de reconocer.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="equipo-card equipo-derecha">
+
+                <img src="../img/img,gabriela.jpeg" alt="Gabriela Rodríguez">
+
+                <div class="equipo-texto">
+                    <h3>Contabilidad</h3>
+
+                    <p>
+                        El área de contabilidad está a cargo de
+                        <strong>Gabriela Rodríguez</strong> y se encarga de
+                        organizar y controlar los recursos económicos de
+                        Bluenim. Lleva el registro de los ingresos y gastos,
+                        ayuda a establecer los precios de nuestros monederos
+                        y mantiene un adecuado control financiero de la empresa.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="mvv-container">
+
+            <div class="mvv-card">
+                <h3>Misión</h3>
+
+                <p>
+                    Elaborar monederos de jean de alta calidad, utilizando
+                    materiales reciclados y decoraciones creativas que
+                    reflejen estilo y compromiso con el medio ambiente.
+                    Buscamos satisfacer las necesidades de nuestros clientes
+                    a través de productos únicos, promoviendo la innovación
+                    y la moda sostenible.
+                </p>
+            </div>
+
+            <div class="mvv-card">
+                <h3>Visión</h3>
+
+                <p>
+                    Ser una empresa reconocida por la creación de monederos
+                    de jean innovadores, creativos y personalizados,
+                    destacándonos por nuestros diseños únicos y decorados
+                    con diferentes materiales que reflejan estilo y
+                    originalidad. Aspiramos a crecer poco a poco, llegando
+                    a más personas y posicionándonos como una marca que
+                    inspira moda y responsabilidad con el medio ambiente.
+                </p>
+            </div>
+
+            <div class="mvv-card">
+                <h3>Nuestros Valores</h3>
+
+                <p>
+                    <strong>Creatividad:</strong>
+                    buscamos diseños únicos y originales.
+                    <br><br>
+
+                    <strong>Responsabilidad:</strong>
+                    cuidamos nuestros materiales y recursos.
+                    <br><br>
+
+                    <strong>Compromiso:</strong>
+                    trabajamos con dedicación para ofrecer productos de calidad.
+                    <br><br>
+
+                    <strong>Respeto:</strong>
+                    valoramos a nuestros clientes, compañeros y al medio ambiente.
+                </p>
+            </div>
+
+        </div>
+
+        <section class="tesis">
+
+            <h2>📄 Tesis</h2>
+
+            <p>
+                Conoce nuestro proyecto y todo el proceso de creación de Bluenim.
+            </p>
+
+            <a
+                href="../Tesis.docx"
+                target="_blank"
+                class="boton-tesis"
+            >
+                📄 Ver tesis
+            </a>
+
+        </section>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Bluenim - Hecho con amor.</p>
+    </footer>
+
+</body>
+
+</html>
